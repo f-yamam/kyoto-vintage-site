@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyoto Vintage Clothing</title>
     <style>
+         .map-container {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        height: 600px;
+        background-color: #ddd;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+    }
+    .store-pin {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #333;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .store-pin:hover::after {
+        content: attr(data-name);
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+    #goat { top: 50%; left: 40%; }
+    #frame { top: 60%; left: 55%; }
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -55,6 +87,14 @@
         <p>大学生が語る、京都の魅力的な古着屋たち</p>
     </header>
     <main>
+        <section id="map-section">
+        <h2>京都 古着屋マップ</h2>
+        <div class="map-container">
+            <div id="goat" class="store-pin" data-name="GOAT"></div>
+            <div id="frame" class="store-pin" data-name="FRAME"></div>
+        </div>
+    </section>
+
         <section id="store-intro">
             <h2>店舗紹介</h2>
             <div class="store-card">
