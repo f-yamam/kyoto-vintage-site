@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyoto Vintage Clothing</title>
     <style>
+    .store-info {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        z-index: 10;
+    }
+</style>
+    <style>
          .map-container {
         position: relative;
         width: 90%;
@@ -94,7 +111,19 @@
             <div id="frame" class="store-pin" data-name="FRAME"></div>
         </div>
     </section>
+<section id="map-section">
+    <h2>京都 古着屋マップ</h2>
+    <div class="map-container">
+        <div id="goat" class="store-pin" data-name="GOAT"></div>
+        <div id="frame" class="store-pin" data-name="FRAME"></div>
 
+        <!-- 詳細情報表示エリア -->
+        <div id="store-info" class="store-info">
+            <h3 id="store-name">店舗名</h3>
+            <p id="store-description">ここに店舗の説明が表示されます。</p>
+        </div>
+    </div>
+</section>
         <section id="store-intro">
             <h2>店舗紹介</h2>
             <div class="store-card">
@@ -121,3 +150,18 @@
     </footer>
 </body>
 </html>
+<script>
+    document.getElementById('goat').addEventListener('click', function() {
+        showStoreInfo('GOAT', '古着でありながら、綺麗な商品が揃うショップ。過去のコレクションもあり、1万5千円〜手に入る。');
+    });
+
+    document.getElementById('frame').addEventListener('click', function() {
+        showStoreInfo('FRAME', '古着らしい男っぽさが魅力。USA製のコンバースが驚きの価格で見つかることも。');
+    });
+
+    function showStoreInfo(name, description) {
+        document.getElementById('store-name').textContent = name;
+        document.getElementById('store-description').textContent = description;
+        document.getElementById('store-info').style.display = 'block';
+    }
+</script>
