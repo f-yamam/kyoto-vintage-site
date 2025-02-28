@@ -23,6 +23,17 @@
     }
 </style>
     <style>
+   .instagram-container {
+    max-width: 320px;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 768px) {
+    .instagram-container iframe {
+        width: 100%;
+        height: auto;
+    }
+}     
         /* マップのレスポンシブ対応 */
 .map-container {
     width: 100%;
@@ -178,6 +189,15 @@ iframe {
             <h2>特集記事</h2>
             <p>おすすめの古着屋巡りルートやイベント情報を掲載しています。</p>
         </section>
+        <h3>GOATのInstagram</h3>
+<div class="instagram-container">
+    <iframe src="https://www.instagram.com/p/投稿ID/" width="320" height="400" style="border:0; overflow:hidden;" allowfullscreen></iframe>
+</div>
+
+<h3>FRAMEのInstagram</h3>
+<div class="instagram-container">
+    <iframe src="https://www.instagram.com/p/投稿ID/" width="320" height="400" style="border:0; overflow:hidden;" allowfullscreen></iframe>
+</div>
     </main>
     <footer>
         <p>&copy; 2025 京都 古着屋ナビ</p>
